@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import './formula_buttons.dart';
 
-class MainPage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _MainPageState();
-  }
-}
-
-class _MainPageState extends State<MainPage> {
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orange,
         title: Text("Equation Solver"),
       ),
-      body: Center(
-        child: Text("jj"),
+      body: ListView(
+        padding: const EdgeInsets.all(20.0),
+        children: <Widget>[
+          FormulaButton('Distance Formula'),
+          FormulaButton('Quadratic Formula'),
+          FormulaButton('Pythagorean Theorem'),
+          FormulaButton('Arithmetic Sum'),
+          FormulaButton('Geometric Sequence'),
+          FormulaButton('View Interstitial Ad'),
+        ],
       ),
     );
   }
