@@ -2,6 +2,6 @@
 
 Solves basic formulas
 
-##Credits
+##Credits <br>
 Developer: David W.
 Contributors: Google
