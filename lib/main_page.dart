@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './formula_buttons.dart';
+import 'formula_buttons.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -7,7 +7,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text("Equation Solver"),
+        title: Text("Formula Solver"),
       ),
       body: ListView(
         padding: const EdgeInsets.all(20.0),
