@@ -1,8 +1,7 @@
-# equation_solver
+# Formula Solver
 
-Solves basic equations
+Solves basic formulas
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+##Credits
+Developer: David W.
+Contributors: Google
