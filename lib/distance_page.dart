@@ -16,8 +16,18 @@ class _DistancePageState extends State<DistancePage> {
       body: Column(
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              TextField(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                width: 75.0,
+                child: Center(child: Text('Text')),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 25.0),
+                width: 200.0,
+                child: TextField(),
+              ),
             ],
           ),
         ],
