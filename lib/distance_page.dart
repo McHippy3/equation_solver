@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'main_page.dart';
 
 class DistancePage extends StatefulWidget {
   State<StatefulWidget> createState() {
