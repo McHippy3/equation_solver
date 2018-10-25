@@ -8,91 +8,101 @@ class DistancePage extends StatefulWidget {
 }
 
 class _DistancePageState extends State<DistancePage> {
-  static TextEditingController x1controller = TextEditingController();
-  static TextEditingController y1controller = TextEditingController();
-  static TextEditingController x2controller = TextEditingController();
-  static TextEditingController y2controller = TextEditingController();
 
+  TextEditingController x1controller = TextEditingController();
+  TextEditingController y1controller = TextEditingController();
+  TextEditingController x2controller = TextEditingController();
+  TextEditingController y2controller = TextEditingController();
+  RowTextFields _x1, _y1, _x2, _y2;
   String answer = '';
 
-  RowTextFields _x1 = RowTextFields(
-    frontText: 'X1 =',
-    widthText: 100.0,
-    widthTextField: 250.0,
-    fontSize: 24.0,
-    controller: x1controller,
-  );
+  _DistancePageState(){
+    _x1 = RowTextFields(
+      frontText: 'X1 =',
+      widthText: 100.0,
+      widthTextField: 250.0,
+      fontSize: 24.0,
+      controller: x1controller,
+    );
+    _y1 = RowTextFields(
+      frontText: 'Y1 =',
+      widthText: 100.0,
+      widthTextField: 250.0,
+      fontSize: 24.0,
+      controller: y1controller,
+    );
+    _x2 = RowTextFields(
+      frontText: 'X2 =',
+      widthText: 100.0,
+      widthTextField: 250.0,
+      fontSize: 24.0,
+      controller: x2controller,
+    );
+    _y2 = RowTextFields(
+      frontText: 'Y2 =',
+      widthText: 100.0,
+      widthTextField: 250.0,
+      fontSize: 24.0,
+      controller: y2controller,
+    );
+  }
 
-  RowTextFields _y1 = RowTextFields(
-    frontText: 'Y1 =',
-    widthText: 100.0,
-    widthTextField: 250.0,
-    fontSize: 24.0,
-    controller: y1controller,
-  );
 
-  RowTextFields _x2 = RowTextFields(
-    frontText: 'X2 =',
-    widthText: 100.0,
-    widthTextField: 250.0,
-    fontSize: 24.0,
-    controller: x2controller,
-  );
-
-  RowTextFields _y2 = RowTextFields(
-    frontText: 'Y2 =',
-    widthText: 100.0,
-    widthTextField: 250.0,
-    fontSize: 24.0,
-    controller: y2controller,
-  );
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Distance Formula'),
       ),
-      body: ListView(
-        children: <Widget>[
-          _x1,
-          _y1,
-          _x2,
-          _y2,
-          Padding(
-            padding: const EdgeInsets.only(top: 50.0),
-            child: Center(
-              child: RaisedButton(
-                child: Text('Calculate'),
-                onPressed: calculate,
+      body: Builder(
+        builder: (BuildContext context) {
+          return ListView(
+            children: <Widget>[
+              _x1,
+              _y1,
+              _x2,
+              _y2,
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0),
+                child: Center(
+                  child: RaisedButton(
+                    child: Text('Calculate'),
+                    onPressed: () {
+                      try {
+                        throw Exception;
+                      } catch (Exception) {
+                        Scaffold.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                                'All Fields Must Be Non-Empty Numeric Values'),
+                            duration: Duration(seconds: 1),
+                        ),);
+                      }
+                      setState(() {});
+                    },
+                  ),
+                ),
               ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: Center(
-              child: Text(answer, style: TextStyle(fontSize: 32.0)),
-            ),
-          ),
-        ],
+              Padding(
+                padding: const EdgeInsets.all(50.0),
+                child: Center(
+                  child: Text(answer, style: TextStyle(fontSize: 32.0)),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
 
-  void calculate() {
-    try{
-
-    }
-    catch(Exception){
-      print('Error');
-    }
-    setState(() {});
-  }
+  void calculate() {}
 
   @override
-  void dispose(){
+  void dispose() {
     x1controller.dispose();
     y1controller.dispose();
     x2controller.dispose();
     y2controller.dispose();
+    super.dispose();
   }
 }

@@ -27,12 +27,28 @@ class FormulaButton extends StatelessWidget {
               );
               break;
             case 'Quadratic Formula':
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuadraticPage()),
+              );
               break;
             case 'Pythagorean Theorem':
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PythagoreanPage())
+              );
               break;
             case 'Arithmetic Sum':
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ArithmeticPage())
+              );
               break;
             case 'Geometric Sequence':
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GeometricPage())
+              );
               break;
             case 'View Interstitial Ad':
               break;
