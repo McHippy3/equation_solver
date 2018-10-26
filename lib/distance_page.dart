@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './row_textfield.dart';
+import 'dart:math';
 
 class DistancePage extends StatefulWidget {
   State<StatefulWidget> createState() {
@@ -69,7 +70,7 @@ class _DistancePageState extends State<DistancePage> {
                     child: Text('Calculate'),
                     onPressed: () {
                       try {
-                        throw Exception;
+                        calculate(double.parse(x1controller.text),double.parse(y1controller.text),double.parse(x2controller.text),double.parse(y2controller.text));
                       } catch (Exception) {
                         Scaffold.of(context).showSnackBar(SnackBar(
                             content: Text(
@@ -95,7 +96,9 @@ class _DistancePageState extends State<DistancePage> {
     );
   }
 
-  void calculate() {}
+  void calculate(double x1, double y1, double x2, double y2) {
+    answer = (((sqrt(pow((x2-x1),2)+pow((y2-y1),2))*1000).round())/1000).toString();
+  }
 
   @override
   void dispose() {
