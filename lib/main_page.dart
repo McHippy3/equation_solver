@@ -18,7 +18,6 @@ class MainPage extends StatelessWidget {
           FormulaButton('Pythagorean Theorem'),
           FormulaButton('Arithmetic Sum'),
           FormulaButton('Geometric Sequence'),
-          FormulaButton('View Interstitial Ad'),
         ],
       ),
     );
