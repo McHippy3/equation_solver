@@ -9,7 +9,6 @@ class DistancePage extends StatefulWidget {
 }
 
 class _DistancePageState extends State<DistancePage> {
-
   TextEditingController x1controller = TextEditingController();
   TextEditingController y1controller = TextEditingController();
   TextEditingController x2controller = TextEditingController();
@@ -17,7 +16,7 @@ class _DistancePageState extends State<DistancePage> {
   RowTextFields _x1, _y1, _x2, _y2;
   String answer = '';
 
-  _DistancePageState(){
+  _DistancePageState() {
     _x1 = RowTextFields(
       frontText: 'X1 =',
       widthText: 100.0,
@@ -48,8 +47,6 @@ class _DistancePageState extends State<DistancePage> {
     );
   }
 
-
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -64,19 +61,31 @@ class _DistancePageState extends State<DistancePage> {
               _x2,
               _y2,
               Padding(
+                padding: const EdgeInsets.only(top: 25.0),
+                child: Center(
+                  child: Image.asset('assets/distance_formula.PNG'),
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.only(top: 50.0),
                 child: Center(
                   child: RaisedButton(
                     child: Text('Calculate'),
                     onPressed: () {
                       try {
-                        calculate(double.parse(x1controller.text),double.parse(y1controller.text),double.parse(x2controller.text),double.parse(y2controller.text));
+                        calculate(
+                            double.parse(x1controller.text),
+                            double.parse(y1controller.text),
+                            double.parse(x2controller.text),
+                            double.parse(y2controller.text));
                       } catch (Exception) {
-                        Scaffold.of(context).showSnackBar(SnackBar(
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(
                             content: Text(
                                 'All Fields Must Be Non-Empty Numeric Values'),
                             duration: Duration(seconds: 1),
-                        ),);
+                          ),
+                        );
                       }
                       setState(() {});
                     },
@@ -97,7 +106,9 @@ class _DistancePageState extends State<DistancePage> {
   }
 
   void calculate(double x1, double y1, double x2, double y2) {
-    answer = (((sqrt(pow((x2-x1),2)+pow((y2-y1),2))*1000).round())/1000).toString();
+    answer =
+        'd = ' + (((sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2)) * 1000).round()) / 1000)
+            .toString();
   }
 
   @override

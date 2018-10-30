@@ -54,6 +54,12 @@ class _QuadraticPageState extends State<QuadraticPage>{
             _b,
             _c,
             Padding(
+              padding: const EdgeInsets.only(top: 25.0),
+              child: Center(
+                child: Image.asset('assets/quadratic_formula.PNG'),
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Center(
                 child: RaisedButton(
@@ -86,16 +92,24 @@ class _QuadraticPageState extends State<QuadraticPage>{
   }
 
   void calculate(double a, double b, double c){
-    if(pow(b,2)-4*a*c < 0){
+    if(pow(b,2) - 4 * a * c < 0){
       answer = 'No Solution';
       return;
     }
-    double answerplus = ((1000*((-b+sqrt(pow(b,2)-4*a*c))/(2*a))).round()/1000);
-    double answerneg = ((1000*((-b-sqrt(pow(b,2)-4*a*c))/(2*a))).round()/1000);
+    double answerplus = ((1000 * ((-b + sqrt(pow(b,2) - 4 * a * c)) / (2 * a))).round() / 1000);
+    double answerneg = ((1000 * ((-b - sqrt(pow(b,2) - 4 * a * c)) / (2 * a))).round() / 1000);
     if(answerplus == answerneg) {
-      answer = answerplus.toString();
+      answer = 'X = ' + answerplus.toString();
       return;
     }
-    answer = answerplus.toString()+ ', ' + answerneg.toString();
+    answer = 'X = ' + answerplus.toString()+ ', ' + answerneg.toString();
+  }
+
+  @override
+  void dispose() {
+    acontroller.dispose();
+    bcontroller.dispose();
+    ccontroller.dispose();
+    super.dispose();
   }
 }

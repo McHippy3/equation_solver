@@ -13,9 +13,9 @@ class FormulaButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20.0),
+      padding: const EdgeInsets.symmetric(vertical: 25.0),
       child: RaisedButton(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(20.0),
         child: Text(buttonText),
         onPressed: () {
           switch (buttonText) {
@@ -32,24 +32,16 @@ class FormulaButton extends StatelessWidget {
               );
               break;
             case 'Pythagorean Theorem':
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PythagoreanPage())
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PythagoreanPage()));
               break;
             case 'Arithmetic Sum':
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ArithmeticPage())
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ArithmeticPage()));
               break;
             case 'Geometric Sequence':
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GeometricPage())
-              );
-              break;
-            case 'View Interstitial Ad':
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GeometricPage()));
               break;
           }
         },
