@@ -32,10 +32,12 @@ class RowTextFields extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 15.0),
-          width: widthTextField,
+        Expanded(
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(0.0,15.0,25.0,15.0),
+          width: widthTextField ,
           child: tf,
+        ),
         ),
       ],
     );

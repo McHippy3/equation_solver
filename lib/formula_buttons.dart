@@ -4,7 +4,6 @@ import 'quadratic_page.dart';
 import 'pythagorean_page.dart';
 import 'arithmetic_page.dart';
 import 'geometric_page.dart';
-import 'interstitial_ad.dart';
 
 class FormulaButton extends StatelessWidget {
   String buttonText;
