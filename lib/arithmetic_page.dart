@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import './row_textfield.dart';
-import 'dart:math';
 
 class ArithmeticPage extends StatefulWidget {
   State<StatefulWidget> createState() {

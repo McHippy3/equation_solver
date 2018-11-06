@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './distance_page.dart';
 
+@immutable
 class RowTextFields extends StatelessWidget {
   String frontText, currentText;
   double widthText, widthTextField, fontSize;
