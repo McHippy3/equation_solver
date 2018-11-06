@@ -5,8 +5,9 @@ import 'pythagorean_page.dart';
 import 'arithmetic_page.dart';
 import 'geometric_page.dart';
 
+@immutable
 class FormulaButton extends StatelessWidget {
-  String buttonText;
+  final String buttonText;
 
   FormulaButton(this.buttonText);
 
